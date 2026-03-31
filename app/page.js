@@ -43,7 +43,10 @@ export default function Home() {
   // Fetch data for selected week
   useEffect(() => {
     const fetchData = async () => {
-      if (!selectedWeek) return;
+      if (!selectedWeek) {
+        setIsLoading(false);
+        return;
+      }
 
       setIsLoading(true);
       setError('');
